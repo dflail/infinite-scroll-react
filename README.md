@@ -1,3 +1,7 @@
-## Infinite Scroll in React
+## React Infinite Scrolling
 
-Infinite scrolling using JSONPlaceholder api (https://jsonplaceholder.typicode.com/)
+Expanding upon a similar example from Leigh Halliday and wired in with live data retrived from JSONPlaceholder api.
+
+https://github.com/leighhalliday/demo-infinite-scroll/blob/master/src/WithIntersection.js
+
+https://jsonplaceholder.typicode.com/
