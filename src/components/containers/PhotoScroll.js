@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { getPhotos, usePhoto } from '../../context/photo/PhotoState';
+import PhotoItem from './PhotoItem';
 
 const PhotoScroll = () => {
   const [photoState, photoDispatch] = usePhoto();
@@ -23,7 +24,7 @@ const PhotoScroll = () => {
 
   useEffect(() => {
     loader.current = getPhotos;
-  }, [getPhotos]);
+  }, []);
 
   useEffect(() => {
     pager.current = page;
@@ -48,17 +49,18 @@ const PhotoScroll = () => {
     <Fragment>
       <ul>
         {data.map(photo => (
-          <li>
-            <img key={photo.id} src={photo.url} width='200px' height='200px' />
-            <br />
-            <span>
-              <em>{photo.title}</em>
-            </span>
-            <h5>
-              Album ID: {photo.albumId} Photo ID: {photo.id}
-            </h5>
-            <br />
-          </li>
+          <PhotoItem key={photo.id} photo={photo} />
+          // <li>
+          //   <img key={photo.id} src={photo.url} width='200px' height='200px' />
+          //   <br />
+          //   <span>
+          //     <em>{photo.title}</em>
+          //   </span>
+          //   <h5>
+          //     Album ID: {photo.albumId} Photo ID: {photo.id}
+          //   </h5>
+          //   <br />
+          // </li>
         ))}
         {loading && <li>Loading...</li>}
         {!loading && hasMore && (
