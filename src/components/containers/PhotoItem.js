@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 
 const PhotoItem = memo(({ photo: { id, albumId, url, title } }) => {
+  // const PhotoItem = ({ photo: { id, albumId, url, title } }) => {
   console.log(`Photo ${id} from Album ${albumId} rendered...`);
   return (
     <li>
@@ -15,6 +16,7 @@ const PhotoItem = memo(({ photo: { id, albumId, url, title } }) => {
       <br />
     </li>
   );
+  // };
 });
 
 export default PhotoItem;
